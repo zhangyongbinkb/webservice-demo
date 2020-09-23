@@ -11,18 +11,27 @@
         http://cxf.apache.org/jaxws
         http://cxf.apache.org/schemas/jaxws.xsd">
 
+    <!-- 第一种方式 -->
     <!--
         Spring整合cxf发布服务，关键点：
         1. 服务地址
         2. 服务类
         服务完整访问地址：
             http://localhost:8000/ws/jaxws_spring_server
-    -->
+
     <jaxws:server address="/jaxws_spring_server">
         <jaxws:serviceBean>
             <bean class="com.zyb.service.impl.UserServiceImpl"></bean>
         </jaxws:serviceBean>
     </jaxws:server>
+    -->
+
+    <!-- 第二种方式 -->
+    <!-- webService -->
+    <import resource="classpath:META-INF/cxf/cxf.xml" />
+
+    <!--发布，implementor为接口的具体实现类 -->
+    <jaxws:endpoint implementor="com.zyb.service.impl.UserServiceImpl" address="/userService"></jaxws:endpoint>
 
 
 </beans>
