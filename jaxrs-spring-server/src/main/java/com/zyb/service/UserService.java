@@ -19,12 +19,13 @@ public interface UserService {
     // 访问当前服务接口方法对应的路径。 【.../userService/user】
     @Path("/user")
     //  服务器支持的请求的数据格式类型
-    @Consumes({ "application/xml", "application/json" })
+    @Consumes({"application/json" })
+//    @Consumes({ "application/xml", "application/json" })
     public void saveUser(User user);
 
     @GET
     @Path("/user/{id}")
     @Consumes("application/xml")
-    @Produces({ "application/xml", "application/json" })
+    @Produces({ "application/json" })
     public User finUserById(@PathParam("id") Integer id);
 }

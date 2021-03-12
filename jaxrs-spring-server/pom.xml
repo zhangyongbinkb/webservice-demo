@@ -39,13 +39,12 @@
       <version>3.0.1</version>
     </dependency>
 
-    <!-- 转换json工具包，被extension providers 依赖 -->
+    <!-- 阿里的json工具包 -->
     <dependency>
-      <groupId>org.codehaus.jettison</groupId>
-      <artifactId>jettison</artifactId>
-      <version>1.3.7</version>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.68</version>
     </dependency>
-
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
